@@ -93,13 +93,10 @@ function sum(acc,x){
 numbers.reduce(sum);
 
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
-let y= (acc + x);
-function averageNumbers(acc,x){
-  
-  let len = numbers,length;
-  return y/len;
+function sum(acc,x){
+  return (acc + x)/numbers.length;
 }
-numbers.reduce(averageNumbers);
+numbers.reduce(sum);
 //--------------------------------------------------------------------------------------------
 
 let strings = [
@@ -393,6 +390,9 @@ console.log(repeat("Ha!", 3)); // "Ha!Ha!Ha!"
   @return String
 */
 // your code goes here
+function insert(str,ins,n){
+  return (str.slice(0,n) + ins + str.slice(n));
+  }
 
 // Test
 console.log(insert("We are doing some exercises.", "JavaScript ", 18)); // "We are doing some JavaScript exercises."
@@ -425,11 +425,11 @@ Write a function to truncates a string if it is longer than the specified number
 */
 // your code goes here
 function textTruncate(str,len){
-
+      return (str.slice(0,len-2).padEnd(15,"!"));
 }
 
 // Test
-console.log(textTruncate("We are doing JS string exercises.", 15, "!!")); //"We are doing !!"
+console.log(textTruncate("We are doing JS string exercises.", 15, "!!")) //"We are doing !!"
 ```
 
 - Write a JavaScript function to chop a string into chunks of a given length.
