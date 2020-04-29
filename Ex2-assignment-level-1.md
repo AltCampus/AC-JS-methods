@@ -819,7 +819,7 @@ strings.shift();
 function includeIs(str,i,arr){
   return (str.includes("is"));
 }
-strings.filter(includesIs);
+strings.filter(includeIs);
 // - Find all the words that contain 'is' use string method 'indexOf'
 strings.indexOf("is");
 

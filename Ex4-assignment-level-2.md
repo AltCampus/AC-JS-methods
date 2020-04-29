@@ -82,8 +82,14 @@ function odd(x){
 numbers.map(odd);
 
 // - Sort the above number in assending order.
+function ascending(x,i,arr){
+  return arr.sort( function (a,b) { return (a-b)});
+}
+numbers.filter(ascending);
 
 // - Does sort mutate the original array?
+
+Yes, sort mutates the original array.
 
 // - Find the sum of the numbers in the array.
 
@@ -312,11 +318,15 @@ console.log(capitalizeWords("js string exercises")); // "Js String Exercises"
 
 function swapcase(str){
   for(let i = 0;i < str.length;i++){
-    if((str.charCodeAt(i) > 65) && (str.codeCharAt(i) < 90)){
-
-    }
-    var lower = String.fromCharCode(i + 32);
+    if((str[i].charCodeAt(i) > 65) && (str[i].codeCharAt(i) < 90)){
+        var lower = String.fromCharCode(i + 32);
     return lower;
+    }else if((str[i].charCodeAt(i) > 97) && (str[i].codeCharAt(i) < 123)){
+        var upper = String.fromCharCode(i + 32);
+    return upper;
+    }
+    
+}
 }
 
 // Tets
@@ -407,6 +417,19 @@ console.log(insert("We are doing some exercises.", "JavaScript ", 18)); // "We a
   @return String
 */
 // your code goes here
+function humanize(n){
+  if(((n % 100) >=100)  && ((n % 100) >= 13)){
+    return n + "th";
+  }
+  if ((n % 10) == 1){
+    return n + "st";
+  } else if ((n % 10) == 2 ){
+    return n + "nd";
+  }else if ((n % 10) == 3){
+    return n + "rd";
+  }
+  else return n + "th";
+}
 
 // Test
 console.log(humanize(301)); // "301st"
