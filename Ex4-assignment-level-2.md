@@ -14,34 +14,96 @@ let words = [
 // - Write a function findLongestWord that takes an array of words and returns the longest word from the array. (Use above array "words" to test it). If there are 2 with the same length, it should return the first occurrence.
 
 // - Convert the above array "words" into an array of length of word instead of word.
+function length(c){
+  return c.length;
+}
+words.map(length);
 
 // - Create a new array that only contains word with atleast one vowel.
 
+function vowel(str,i,arr){
+  return (str.includes('a') || str.includes('e') || str.includes('i') || str.includes('o')  || str.includes('u') ) ;
+
+          }
+words.filter(vowel);
+
 // - Find the index of the word "rhythm"
+words.indexOf("rhythm");
 
 // - Create a new array that contians words not starting with vowel.
 
+function vowel(str,i,arr){
+  return (str.startsWith('a') || str.startsWith('e') || str.startsWith('i') || str.startsWith('o')  || str.startsWith('u') ) ;
+
+          }
+words.filter(vowel);
+
+
 // - Create a new array that contianse words not ending with vowel
+function vowel(str,i,arr){
+  return (str.endsWith('a') || str.endsWith('e') || str.endsWith('i') || str.endsWith('o')  || str.endsWith('u') ) ;
+
+          }
+words.filter(vowel);
+//------------------
 
 let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 // - Create a sumArray function that takes an array of number as a parameter, and calculate the sum of all its numbers
+function sumArray(acc,x){
+  return acc + x;
+}
+numbers.reduce(sumArray);
 
 // - Make a new array that contains number multiplied by 3 like [6, 18, 27 ...]
+function mul3(x){
+  return (x%3==0);
+}
+numbers.filter(mul3);
 
 // - Create a new array that contains only even numbers
+function even(x){
+  return (x%2==0);
+}
+numbers.filter(even);
 
 // - Create  a new array that contains only odd numbers.
 
+function odd(x){
+  return (x%2==1);
+}
+numbers.filter(odd);
+
 // - Create a new array that should have true for even number and false for odd numbers.
 
+function odd(x){
+  return ((x%2==0)? true : false);
+}
+numbers.map(odd);
+
 // - Sort the above number in assending order.
+function ascending(x,i,arr){
+  return arr.sort( function (a,b) { return (a-b)});
+}
+numbers.filter(ascending);
 
 // - Does sort mutate the original array?
 
+Yes, sort mutates the original array.
+
 // - Find the sum of the numbers in the array.
 
+function sum(acc,x){
+  return acc + x;
+}
+numbers.reduce(sum);
+
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
+function sum(acc,x){
+  return (acc + x)/numbers.length;
+}
+numbers.reduce(sum);
+//--------------------------------------------------------------------------------------------
 
 let strings = [
   "seat",
@@ -56,6 +118,11 @@ let strings = [
   "palace"
 ];
 // - Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
+//DOUBT
+function averageWordLength(acc,x){
+  return acc +x.length;
+}
+strings.reduce(averageWordLength);
 ```
 
 ## String Methods-writeCode
@@ -70,6 +137,13 @@ let strings = [
 */
 
 // your code goes here
+function isString(x){
+  if(typeof x === 'string'){
+    return true;
+  }else {
+    return false;
+  }
+}
 
 // Test
 console.log(isString("tony stark")); // true;
@@ -86,6 +160,13 @@ console.log(isString([1, 2, 4, 0])); // false;
 */
 
 // your code goes here
+function isBlank(x){
+  if(x.length == ""){
+    return true;
+  } else {
+    return false;
+  } 
+}
 
 // Test
 console.log(isBlank("")); // true;
@@ -101,6 +182,9 @@ console.log(isBlank("abc")); // false;
   @return Array
 */
 // your code goes here
+function stringToArray(x){
+  return x.split(" ");
+}
 
 // Test
 console.log(stringToArray("Hello World")); // ["Robin", "Singh"];
@@ -116,6 +200,9 @@ console.log(stringToArray("Lady Bird")); // ["Lady", "Bird"];
   @return String
 */
 // your code goes here
+function truncate(a,4){
+  return a.slice(0,3);
+}
 
 // Test
 console.log(truncate("Robin Singh", 4)); //"Robi";
@@ -130,6 +217,13 @@ console.log(truncate("Robin Singh", 4)); //"Robi";
   @return String
 */
 // your code goes here
+function abbrevName(x){
+  var split_names = str1.trim().split(" ");
+    if (split_names.length > 1) {
+        return (split_names[0] + " " + split_names[1].charAt(0) + ".");
+    }
+    return split_names[0];
+}
 
 // Test
 console.log(abbrevName("Robin Singh")); //"Robin S."
@@ -144,6 +238,13 @@ console.log(abbrevName("Robin Singh")); //"Robin S."
   @return String
 */
 // your code goes here
+function protect(a){
+ let index2 =  a.indexOf("@");
+ let email = a.slice(index2);
+  let id = a.slice(0,(index2/2));
+  let finalId = id.padEnd(index2-3,".");
+  console.log(finalId + email);
+}
 
 // Test
 console.log(protect("robin_singh@example.com")); // "robin...@example.com"
@@ -158,6 +259,10 @@ console.log(protect("robin_singh@example.com")); // "robin...@example.com"
   @return String
 */
 // your code goes here
+function parameterize(a){
+  return a.split(" ").join("-");
+   
+}
 
 // Test
 console.log(parameterize("Robin Singh from USA.")); // "robin-singh-from-usa"
@@ -172,6 +277,9 @@ console.log(parameterize("Robin Singh from USA.")); // "robin-singh-from-usa"
 @return String
 */
 // your code goes here
+function capitalizeFirst(x){
+  return (x[0].toUpperCase() + x.slice(1));
+}
 
 // Test
 console.log(capitalizeFirst("js string exercises")); // "Js string exercises"
@@ -186,6 +294,15 @@ console.log(capitalizeFirst("js string exercises")); // "Js string exercises"
   @return String
 */
 // your code goes here
+function capitalizeWords(str){
+  var newArray = [];
+  var arr=str.split(" ");
+  for(var i = 0; i < arr.length; i++){
+      newArray.push(arr[i].charAt(0).toUpperCase()+arr[i].slice(1));
+  }
+  return newArray.join(" ");
+}
+
 console.log(capitalizeWords("js string exercises")); // "Js String Exercises"
 ```
 
@@ -198,6 +315,19 @@ console.log(capitalizeWords("js string exercises")); // "Js String Exercises"
   @return String
 */
 // your code goes here
+
+function swapcase(str){
+  for(let i = 0;i < str.length;i++){
+    if((str[i].charCodeAt(i) > 65) && (str[i].codeCharAt(i) < 90)){
+        var lower = String.fromCharCode(i + 32);
+    return lower;
+    }else if((str[i].charCodeAt(i) > 97) && (str[i].codeCharAt(i) < 123)){
+        var upper = String.fromCharCode(i + 32);
+    return upper;
+    }
+    
+}
+}
 
 // Tets
 console.log(swapcase("AaBbc")); // "aAbBC"
@@ -214,6 +344,15 @@ Example:
   @return String
 */
 // your code goes here
+function camelize(str){
+  for(let i=0;i<str.length;i++){
+    if(str[i] == ' '){
+      var x = str[i+1].toUpperCase();
+      var last =str.slice(str[i],str.length-1);
+    }
+  }
+  return (x + last);
+}
 
 // Test
 console.log(camelize("JavaScript Exercises")); // "JavaScriptExercises"
@@ -244,6 +383,9 @@ console.log(uncamelize("helloWorld", "_")); // "hello_world"
   @return String
 */
 // your code goes here
+function repeat(x,y){
+  return x.repeat(y);
+}
 
 // Test
 console.log(repeat("Ha!", 3)); // "Ha!Ha!Ha!"
@@ -258,6 +400,9 @@ console.log(repeat("Ha!", 3)); // "Ha!Ha!Ha!"
   @return String
 */
 // your code goes here
+function insert(str,ins,n){
+  return (str.slice(0,n) + ins + str.slice(n));
+  }
 
 // Test
 console.log(insert("We are doing some exercises.", "JavaScript ", 18)); // "We are doing some JavaScript exercises."
@@ -272,6 +417,19 @@ console.log(insert("We are doing some exercises.", "JavaScript ", 18)); // "We a
   @return String
 */
 // your code goes here
+function humanize(n){
+  if(((n % 100) >=100)  && ((n % 100) >= 13)){
+    return n + "th";
+  }
+  if ((n % 10) == 1){
+    return n + "st";
+  } else if ((n % 10) == 2 ){
+    return n + "nd";
+  }else if ((n % 10) == 3){
+    return n + "rd";
+  }
+  else return n + "th";
+}
 
 // Test
 console.log(humanize(301)); // "301st"
@@ -289,9 +447,12 @@ Write a function to truncates a string if it is longer than the specified number
   @return String
 */
 // your code goes here
+function textTruncate(str,len){
+      return (str.slice(0,len-2).padEnd(15,"!"));
+}
 
 // Test
-console.log(textTruncate("We are doing JS string exercises.", 15, "!!")); //"We are doing !!"
+console.log(textTruncate("We are doing JS string exercises.", 15, "!!")) //"We are doing !!"
 ```
 
 - Write a JavaScript function to chop a string into chunks of a given length.
@@ -303,6 +464,15 @@ console.log(textTruncate("We are doing JS string exercises.", 15, "!!")); //"We 
   @return String
 */
 // your code goes here
+function stringChop(str,len){
+  let resultant =[];
+  for(let i = 0;i<str.length;i=i+len){
+
+       resultant.push(str.slice(i, i + len));
+  }
+  return resultant;
+}
+
 
 // Test
 console.log(stringChop("hello world", 2)); // ["he", "ll", "o ", "wo", "rl", "d"]
@@ -317,6 +487,17 @@ console.log(stringChop("hello world", 2)); // ["he", "ll", "o ", "wo", "rl", "d"
   @return Number
 */
 // your code goes here
+function count(str){
+    let cnt = 0;
+    let x = str.toLowerCase().split(" ");
+    for(let i =0;i<x.length;i++){
+      if(x.includes("the")){
+        cnt ++;
+      }
+      return cnt;
+    }
+
+}
 
 // Test
 console.log(count("The quick brown fox jumps over the lazy dog", "the")); // 2
@@ -330,7 +511,9 @@ console.log(count("The quick brown fox jumps over the lazy dog", "the")); // 2
   @parameter (string) text
   @return String
 */
-
+function strip(x){
+  return x.trim();
+}
 // Test
 console.log(strip("   Hello World ")); // "Hello World"
 ```
@@ -343,6 +526,11 @@ console.log(strip("   Hello World ")); // "Hello World"
   @parameter (string, number) text, words
   @return String
 */
+
+//code
+function chopWords(str, noOfwords) {
+    return str.split(" ").splice(0,noOfwords).join(" ");
+}
 
 // Test
 console.log(chopWords("The quick brown fox jumps over the lazy dog", 4)); // "The quick brown fox"
@@ -357,6 +545,13 @@ console.log(chopWords("The quick brown fox jumps over the lazy dog", 4)); // "Th
   @return String
 */
 
+function alphabetize(x){
+  let arr =x.split("");
+let arr2= arr.sort().join('');
+  
+  console.log(arr);
+  console.log(arr2);
+}
 // Test
 console.log(alphabetize("United States")); // 'SUadeeinsttt'
 ```

@@ -9,43 +9,102 @@
   <body>
     <script src="./data.js"></script>
     <script>
-      function countAllPeople() {
+
+      let gotHouses = got.houses;
+      let countPeople = 0;
+      function countAllPeople(obj,i,gotHouses) {
         // your code goes here
+        let store =0; 
+        store = store + obj.people.length;
+        return store;
+        
+        
       }
 
-      function peopleByHouses() {
+      function peopleByHouses(obj,i,gotHouses) {
         // your code goes here
+        return obj.name + ':' + obj.people.length;
       }
 
       function everyone() {
         // your code goes here
+       let everyoneNames = got.houses.reduce(function(acc,house,i,arr){
+       let names = house.people.map(pep => pep.name);
+        return acc.concat(names);
+        },[]);
+        return everyoneNames;
       }
 
       function nameWithS() {
         // your code goes here
+        let every =got.houses.reduce(function(acc,house,i,arr){
+       let names = house.people.map(pep => pep.name);
+        return acc.concat(names);
+            },[]);
+        
+       allNameWithS =  every.filter(ever => (ever.includes('S') || ever.includes('s')));
+       return allNameWithS;
       }
 
       function nameWithA() {
         // your code goes here
+        let every =got.houses.reduce(function(acc,house,i,arr){
+       let names = house.people.map(pep => pep.name);
+        return acc.concat(names);
+           },[]);
+        
+       allNameWithA =  every.filter(ever => (ever.includes('A') || ever.includes('a')));
+       return allNameWithA;
       }
 
       function surnameWithS() {
         // your code goes here
+        let every =got.houses.reduce(function(acc,house,i,arr){
+       let names = house.people.map(pep => pep.name);
+        return acc.concat(names);
+         },[]);
+        
+      let namesWithS = every.filter(ever => (ever.includes('S') || ever.includes('s')));
+       let splitNames = namesWithS.map(name => name.split(" ")); 
+        let nameswithCapSurname = splitNames.filter( name => {
+                if(name[name.length-1][0] == "S"){
+                    return name;} 
+
+                });
+            return nameswithCapSurname;
+
+
       }
 
       function surnameWithA() {
         // your code goes here
+
+        let every =got.houses.reduce(function(acc,house,i,arr){
+       let names = house.people.map(pep => pep.name);
+        return acc.concat(names);
+         },[]);
+        
+      let namesWithA = every.filter(ever => (ever.includes('A') || ever.includes('a')));
+       let splitNames = namesWithA.map(name => name.split(" ")); 
+        let nameswithCapSurname = splitNames.filter( name => {
+                if(name[name.length-1][0] == "A"){
+                    return name;} 
+
+                });
+            return nameswithCapSurname;
+
       }
 
       function peopleNameOfAllHouses() {
         // your code goes here
+        return got.houses.map(elem => elem.name + "  [" + elem.people.map(pupil =>  pupil.name )+ "]");
       }
 
       // Testing your result after writing your function
-      console.log(countAllPeople());
+      console.log(gotHouses.map(countAllPeople).reduce((acc,x) => acc+x )) ;
       // Output should be 33
 
-      console.log(peopleByHouses());
+      console.log(gotHouses.map(peopleByHouses).sort());
       // Output should be
       //{Arryns: 1, Baratheons: 6, Dothrakis: 1, Freys: 1, Greyjoys: 3, Lannisters: 4,Redwyne: 1,Starks: 8,Targaryens: 2,Tullys: 4,Tyrells: 2}
 
