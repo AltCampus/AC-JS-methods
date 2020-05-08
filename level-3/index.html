@@ -11,35 +11,76 @@
     <script>
       function countAllPeople() {
         // your code goes here
-      }
-
-      function peopleByHouses() {
+        function countAllPeople() {
         // your code goes here
+        let count = got.houses.reduce(function(acc,cv){
+          acc = acc + cv.people.length;  
+        return acc;
+        },0);
+        return count;
       }
+      console.log(countAllPeople());
+///////////////
+        function peopleByHouses() {
+        return got.houses.map(elem => elem.name + ":" + elem.people.length).sort();
+          console.log(peopleByHouses())};
+///////////////////
 
       function everyone() {
         // your code goes here
+       return got.houses.map(elem => elem.people.map(cv => cv.name));
       }
+      console.log(everyone());
 
       function nameWithS() {
         // your code goes here
+       got.houses.reduce((acc,cv) => {
+        acc.push(...cv.people.map(x => x.name).filter(y => y.toLowerCase().includes('s')))
+        return acc;
+        },[])
+      
       }
 
       function nameWithA() {
         // your code goes here
+        let a = got.houses.reduce((acc,cv) => {
+          acc.push(...cv.people.map(x => x.name).filter(y => y.toLowerCase().includes('a')));
+          return acc;
+        },[]);
+        return a;
       }
+      nameWithA(got);
 
       function surnameWithS() {
         // your code goes here
+        let a= got.houses.reduce((acc,cv) => {
+          acc.push(...cv.people.map(x => x.name).filter(y => y.toLowerCase().split(" ")[1].split("")[0].includes('s')));
+        return acc;
+        },[]);
+       return a;
       }
+      surnameWithS(got);
+      
 
       function surnameWithA() {
         // your code goes here
+        let b= got.houses.reduce((acc,cv) => {
+          acc.push(...cv.people.map(x => x.name).filter(y => y.toLowerCase().split(" ")[1].split("")[0].includes('a')));
+          return acc;
+        },[]);
+       return b;
       }
-
+      surnameWithA(got);
+      
       function peopleNameOfAllHouses() {
         // your code goes here
+        got.houses.reduce((acc,cv) => {
+          return cv.map(elem => elem.name + ":" + elem.people.name).sort();
+        },[]);
+        
       }
+      peopleNameOfAllHouses(got);
+      
 
       // Testing your result after writing your function
       console.log(countAllPeople());
