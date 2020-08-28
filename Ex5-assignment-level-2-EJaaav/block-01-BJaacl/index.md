@@ -2,14 +2,14 @@
 
 ```js
 let words = [
-  "mystery",
-  "brother",
-  "aviator",
-  "crocodile",
-  "pearl",
-  "orchard",
-  "crackpot",
-  "rhythm",
+  'mystery',
+  'brother',
+  'aviator',
+  'crocodile',
+  'pearl',
+  'orchard',
+  'crackpot',
+  'rhythm',
 ];
 // - Write a function findLongestWord that takes an array of words and returns the longest word from the array. (Use above array "words" to test it). If there are 2 with the same length, it should return the first occurrence.
 
@@ -44,16 +44,16 @@ let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
 
 let strings = [
-  "seat",
-  "correspond",
-  "linen",
-  "motif",
-  "hole",
-  "smell",
-  "smart",
-  "chaos",
-  "fuel",
-  "palace",
+  'seat',
+  'correspond',
+  'linen',
+  'motif',
+  'hole',
+  'smell',
+  'smart',
+  'chaos',
+  'fuel',
+  'palace',
 ];
 // - Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
 ```
@@ -72,7 +72,7 @@ let strings = [
 // your code goes here
 
 // Test
-console.log(isString("tony stark")); // true;
+console.log(isString('tony stark')); // true;
 console.log(isString([1, 2, 4, 0])); // false;
 ```
 
@@ -88,8 +88,8 @@ console.log(isString([1, 2, 4, 0])); // false;
 // your code goes here
 
 // Test
-console.log(isBlank("")); // true;
-console.log(isBlank("abc")); // false;
+console.log(isBlank('')); // true;
+console.log(isBlank('abc')); // false;
 ```
 
 - Write a JavaScript function to split a string and convert it into an array of words.
@@ -103,8 +103,8 @@ console.log(isBlank("abc")); // false;
 // your code goes here
 
 // Test
-console.log(stringToArray("Hello World")); // ["Robin", "Singh"];
-console.log(stringToArray("Lady Bird")); // ["Lady", "Bird"];
+console.log(stringToArray('Hello World')); // ["Robin", "Singh"];
+console.log(stringToArray('Lady Bird')); // ["Lady", "Bird"];
 ```
 
 - Write a JavaScript function to return specified number of characters from a string.
@@ -118,7 +118,7 @@ console.log(stringToArray("Lady Bird")); // ["Lady", "Bird"];
 // your code goes here
 
 // Test
-console.log(truncate("Robin Singh", 4)); //"Robi";
+console.log(truncate('Robin Singh', 4)); //"Robi";
 ```
 
 - Write a JavaScript function to convert a `string` in abbreviated form.
@@ -132,7 +132,7 @@ console.log(truncate("Robin Singh", 4)); //"Robi";
 // your code goes here
 
 // Test
-console.log(abbrevName("Robin Singh")); //"Robin S."
+console.log(abbrevName('Robin Singh')); //"Robin S."
 ```
 
 - Write a JavaScript function to hide email addresses to protect from unauthorized user.
@@ -146,7 +146,7 @@ console.log(abbrevName("Robin Singh")); //"Robin S."
 // your code goes here
 
 // Test
-console.log(protect("robin_singh@example.com")); // "robin...@example.com"
+console.log(protect('robin_singh@example.com')); // "robin...@example.com"
 ```
 
 - Write a JavaScript function to parameterize a string.
@@ -160,7 +160,7 @@ console.log(protect("robin_singh@example.com")); // "robin...@example.com"
 // your code goes here
 
 // Test
-console.log(parameterize("Robin Singh from USA.")); // "robin-singh-from-usa"
+console.log(parameterize('Robin Singh from USA.')); // "robin-singh-from-usa"
 ```
 
 - Write a JavaScript function to capitalize the first letter of a `string`.
@@ -174,7 +174,7 @@ console.log(parameterize("Robin Singh from USA.")); // "robin-singh-from-usa"
 // your code goes here
 
 // Test
-console.log(capitalizeFirst("js string exercises")); // "Js string exercises"
+console.log(capitalizeFirst('js string exercises')); // "Js string exercises"
 ```
 
 - Write a JavaScript function to capitalize the first letter of each word in a string.
@@ -186,7 +186,7 @@ console.log(capitalizeFirst("js string exercises")); // "Js string exercises"
   @return String
 */
 // your code goes here
-console.log(capitalizeWords("js string exercises")); // "Js String Exercises"
+console.log(capitalizeWords('js string exercises')); // "Js String Exercises"
 ```
 
 - Write a function that takes a string which has lower and upper case letters as a parameter and converts upper case letters to lower case, and lower case letters to upper case.
@@ -200,7 +200,7 @@ console.log(capitalizeWords("js string exercises")); // "Js String Exercises"
 // your code goes here
 
 // Tets
-console.log(swapcase("AaBbc")); // "aAbBC"
+console.log(swapcase('AaBbc')); // "aAbBC"
 ```
 
 - Write a function to convert a string into camel case.
@@ -216,9 +216,9 @@ Example:
 // your code goes here
 
 // Test
-console.log(camelize("JavaScript Exercises")); // "JavaScriptExercises"
-console.log(camelize("JavaScript exercises")); // "JavaScriptExercises"
-console.log(camelize("JavaScriptExercises")); // "JavaScriptExercises"
+console.log(camelize('JavaScript Exercises')); // "JavaScriptExercises"
+console.log(camelize('JavaScript exercises')); // "JavaScriptExercises"
+console.log(camelize('JavaScriptExercises')); // "JavaScriptExercises"
 ```
 
 - Write a function to uncamelize a string. Example:
@@ -232,7 +232,7 @@ console.log(camelize("JavaScriptExercises")); // "JavaScriptExercises"
 // your code goes here
 
 // Tets
-console.log(uncamelize("helloWorld", "_")); // "hello_world"
+console.log(uncamelize('helloWorld', '_')); // "hello_world"
 ```
 
 - Write a function to concatenates a given string n times (default is 1).
@@ -246,7 +246,7 @@ console.log(uncamelize("helloWorld", "_")); // "hello_world"
 // your code goes here
 
 // Test
-console.log(repeat("Ha!", 3)); // "Ha!Ha!Ha!"
+console.log(repeat('Ha!', 3)); // "Ha!Ha!Ha!"
 ```
 
 - Write a function to insert a string within a string at a particular position (default is 1).
@@ -260,7 +260,7 @@ console.log(repeat("Ha!", 3)); // "Ha!Ha!Ha!"
 // your code goes here
 
 // Test
-console.log(insert("We are doing some exercises.", "JavaScript ", 18)); // "We are doing some JavaScript exercises."
+console.log(insert('We are doing some exercises.', 'JavaScript ', 18)); // "We are doing some JavaScript exercises."
 ```
 
 - Write a JavaScript function to humanized number (Formats a number to a human-readable string.) with the correct suffix such as 1st, 2nd, 3rd or 4th.
@@ -291,7 +291,7 @@ Write a function to truncates a string if it is longer than the specified number
 // your code goes here
 
 // Test
-console.log(textTruncate("We are doing JS string exercises.", 15, "!!")); //"We are doing !!"
+console.log(textTruncate('We are doing JS string exercises.', 15, '!!')); //"We are doing !!"
 ```
 
 - Write a JavaScript function to chop a string into chunks of a given length.
@@ -305,7 +305,7 @@ console.log(textTruncate("We are doing JS string exercises.", 15, "!!")); //"We 
 // your code goes here
 
 // Test
-console.log(stringChop("hello world", 2)); // ["he", "ll", "o ", "wo", "rl", "d"]
+console.log(stringChop('hello world', 2)); // ["he", "ll", "o ", "wo", "rl", "d"]
 ```
 
 - Write a function to count the occurrence of a substring in a string.
@@ -319,7 +319,7 @@ console.log(stringChop("hello world", 2)); // ["he", "ll", "o ", "wo", "rl", "d"
 // your code goes here
 
 // Test
-console.log(count("The quick brown fox jumps over the lazy dog", "the")); // 2
+console.log(count('The quick brown fox jumps over the lazy dog', 'the')); // 2
 ```
 
 - Write a function to strip leading and trailing spaces from a string.
@@ -332,7 +332,7 @@ console.log(count("The quick brown fox jumps over the lazy dog", "the")); // 2
 */
 
 // Test
-console.log(strip("   Hello World ")); // "Hello World"
+console.log(strip('   Hello World ')); // "Hello World"
 ```
 
 - Write a JavaScript function to truncate a string to a certain number of words.
@@ -345,7 +345,7 @@ console.log(strip("   Hello World ")); // "Hello World"
 */
 
 // Test
-console.log(chopWords("The quick brown fox jumps over the lazy dog", 4)); // "The quick brown fox"
+console.log(chopWords('The quick brown fox jumps over the lazy dog', 4)); // "The quick brown fox"
 ```
 
 - Write a function to alphabetize a given string.(A - z)
@@ -358,5 +358,5 @@ console.log(chopWords("The quick brown fox jumps over the lazy dog", 4)); // "Th
 */
 
 // Test
-console.log(alphabetize("United States")); // 'SUadeeinsttt'
+console.log(alphabetize('United States')); // 'SUadeeinsttt'
 ```
