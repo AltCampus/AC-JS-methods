@@ -1,0 +1,26 @@
+{
+  "name": "Assignment: Visualise Methods",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex5-assignment-level-2-EJaaax/block-02-BJaadk/index.md",
+  "uniqueCode": "BJaadk",
+  "type": "writeTextAnswer",
+  "level": 1,
+  "contentType": "",
+  "automatedFeedback": "",
+  "githubBranchName": "",
+  "openFile": "",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

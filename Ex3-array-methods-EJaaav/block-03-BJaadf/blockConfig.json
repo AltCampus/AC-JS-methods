@@ -1,0 +1,26 @@
+{
+  "name": "Assignment: Array Methods",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex3-array-methods-EJaaav/block-03-BJaadf/index.md",
+  "uniqueCode": "BJaadf",
+  "type": "writeCode",
+  "level": 1,
+  "contentType": "csb",
+  "automatedFeedback": "",
+  "githubBranchName": "block-BJaadf",
+  "openFile": "./block-BJaadf",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

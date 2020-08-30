@@ -1,5 +1,3 @@
-writeCode
-
 #### Read the following instructions and complete the exercise:
 
 1. You will find a index.js file inside `code` folder

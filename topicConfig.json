@@ -1,0 +1,13 @@
+{
+  "name": "Array and String Methods",
+  "uniqueCode": "TJaaad",
+  "githubAssignmentRepo": "https://github.com/AltCampus/TA-JS-methods-TJaaad",
+  "exercises": [
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex1-more-about-function-EJaaat/exerciseConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex2-string-methods-EJaaau/exerciseConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex3-array-methods-EJaaav/exerciseConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex4-assignment-level-1-EJaaaw/exerciseConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex5-assignment-level-2-EJaaax/exerciseConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex6-assignment-level-3-EJaaay/exerciseConfig.json"
+  ]
+}

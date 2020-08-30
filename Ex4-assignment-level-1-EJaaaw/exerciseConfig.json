@@ -1,0 +1,12 @@
+{
+  "name": "Assignment Level I",
+  "uniqueCode": "EJaaaw",
+  "type": "content",
+  "githubBranchName": "ex4-EJaaaw",
+  "description": "",
+  "blocks": [
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex4-assignment-level-1-EJaaaw/block-01-BJaadg/blockConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex4-assignment-level-1-EJaaaw/block-02-BJaadh/blockConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex4-assignment-level-1-EJaaaw/block-03-BJaadi/blockConfig.json"
+  ]
+}

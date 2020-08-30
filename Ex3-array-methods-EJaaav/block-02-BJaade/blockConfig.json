@@ -1,0 +1,26 @@
+{
+  "name": "Learn About Array Methods",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex3-array-methods-EJaaav/block-02-BJaade/index.md",
+  "uniqueCode": "BJaade",
+  "type": "readText",
+  "level": 1,
+  "contentType": "",
+  "automatedFeedback": "",
+  "githubBranchName": "",
+  "openFile": "",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

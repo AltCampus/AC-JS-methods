@@ -1,0 +1,26 @@
+{
+  "name": "Higher Order Function",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex1-more-about-function-EJaaat/block-04-BJaacy/index.md",
+  "uniqueCode": "BJaacy",
+  "type": "readText",
+  "level": 1,
+  "contentType": "",
+  "automatedFeedback": "",
+  "githubBranchName": "",
+  "openFile": "",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

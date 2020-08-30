@@ -1,0 +1,26 @@
+{
+  "name": "Assignment Level II",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex5-assignment-level-2-EJaaax/block-03-BJaadl/index.md",
+  "uniqueCode": "BJaadl",
+  "type": "writeCode",
+  "level": 1,
+  "contentType": "csb",
+  "automatedFeedback": "",
+  "githubBranchName": "block-BJaadl",
+  "openFile": "./block-BJaadl",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

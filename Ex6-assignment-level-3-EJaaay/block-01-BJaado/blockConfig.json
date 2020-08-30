@@ -1,0 +1,26 @@
+{
+  "name": "Implement Array Methods",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex6-assignment-level-3-EJaaay/block-01-BJaado/index.md",
+  "uniqueCode": "BJaado",
+  "type": "writeTextAnswer",
+  "level": 1,
+  "contentType": "",
+  "automatedFeedback": "",
+  "githubBranchName": "",
+  "openFile": "",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

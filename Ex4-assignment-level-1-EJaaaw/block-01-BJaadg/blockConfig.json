@@ -1,0 +1,26 @@
+{
+  "name": "Array and Srting Methods",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex4-assignment-level-1-EJaaaw/block-01-BJaadg/index.md",
+  "uniqueCode": "BJaadg",
+  "type": "writeCode",
+  "level": 1,
+  "contentType": "csb",
+  "automatedFeedback": "",
+  "githubBranchName": "block-BJaadg",
+  "openFile": "./block-BJaadg",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}

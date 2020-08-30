@@ -1,0 +1,13 @@
+{
+  "name": "Assignment Level III",
+  "uniqueCode": "EJaaay",
+  "type": "content",
+  "githubBranchName": "ex6-EJaaay",
+  "description": "",
+  "blocks": [
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex6-assignment-level-3-EJaaay/block-01-BJaado/blockConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex6-assignment-level-3-EJaaay/block-02-BJaadp/blockConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex6-assignment-level-3-EJaaay/block-03-BJaadq/blockConfig.json",
+    "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex6-assignment-level-3-EJaaay/block-04-BJaadr/blockConfig.json"
+  ]
+}

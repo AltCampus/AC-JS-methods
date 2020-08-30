@@ -1,0 +1,26 @@
+{
+  "name": "Learn About String Methods",
+  "displayName": "",
+  "descriptionURL": "https://github.com/AltCampus/AC-JS-methods-TJaaad/tree/master/Ex2-string-methods-EJaaau/block-02-BJaadb/index.md",
+  "uniqueCode": "BJaadb",
+  "type": "readText",
+  "level": 1,
+  "contentType": "",
+  "automatedFeedback": "",
+  "githubBranchName": "",
+  "openFile": "",
+  "isTestable": false,
+  "estimatedTimeToComplete": 0,
+  "isPotentialInterviewQuestion": false,
+  "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
+  "quizCorrectAnswerOptions": [],
+  "correctAnswerExplanation": "",
+  "todo": {
+    "isReviewed": false,
+    "isAssignmentDone": true,
+    "shouldSplitBlock": false,
+    "actionsRequired": [
+      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+    ]
+  }
+}
