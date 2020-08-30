@@ -1,6 +1,6 @@
-## Array Method Practice
+#### Open `index.html` and do the following in the script tag
 
-### Open `index.html` and do the following in the script tag
+You have a file named `data.js` that contains the data that is accessible to you using name `got`.
 
 NOTE: You can only use the (reduce) array method to solve this exercise:
 

@@ -3,10 +3,10 @@ Watch this video to understand what to do in this exercise block.
 #### How to complete this exercise:
 
 <div class="youtube-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/00f6q4RjRXE?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/zGpplZj4zY0?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## Getting To Know String Methods
+#### Getting To Know String Methods
 
 Go to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and look for the name of method to learn about it.
 
