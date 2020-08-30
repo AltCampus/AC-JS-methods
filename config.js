@@ -1,73 +1,22 @@
-// ro be run in the root of the content repo - AC-reponame
-// generates exerciseConfig, topicConfig and blockConfig.
-// expects each block and exercise name to have uniqueCode
-// and each block must have index.md
+// To run on the root of a topic content repo starting with AC-
+// will generate a seed-${topicName}-${uniqueCode}.js file for that topic in root itself.
 
-let globalBlockConfig = {
-  name: '',
-  displayName: '',
-  descriptionURL: '',
-  uniqueCode: '',
-  type: '',
-  level: 1,
-  contentType: '',
-  automatedFeedback: '',
-  githubBranchName: '',
-  openFile: '',
-  isTestable: false,
-  estimatedTimeToComplete: 0,
-  isPotentialInterviewQuestion: false,
-  quizOptions: {
-    a: '',
-    b: '',
-    c: '',
-    d: '',
-  },
-  quizCorrectAnswerOptions: [],
-  correctAnswerExplanation: '',
-  todo: {
-    isReviewed: false,
-    isAssignmentDone: true,
-    shouldSplitBlock: false,
-    actionsRequired: [
-      {
-        videoId: '',
-        scrimbaId: '',
-        type: 'toVideo',
-        topic: '',
-      },
-    ],
-  },
-};
-
-let globalExerciseConfig = {
-  name: '',
-  uniqueCode: '',
-  type: '',
-  githubBranchName: '',
-  description: '',
-  blocks: [],
-};
-
-let topicConfig = {
-  name: '',
-  uniqueCode: '',
-  githubAssignmentRepo: '',
-  exercises: [],
-};
-
-/***
- *
- * START
- *
- ****/
-
-const { readdirSync, readFileSync, mkdirSync, appendFileSync } = require('fs');
+const {
+  readdirSync,
+  readFileSync,
+  appendFileSync,
+  writeFileSync,
+  renameSync,
+} = require('fs');
 
 const getDirectories = (source) =>
-  readdirSync(source, { withFileTypes: true })
+  readdirSync(source, {
+    withFileTypes: true,
+  })
     .filter((dirent) => dirent.isDirectory())
-    .filter((dirent) => !['.git', 'old', 'assets'].includes(dirent.name))
+    .filter(
+      (dirent) => !['.git', 'old', 'assets', '.vscode'].includes(dirent.name)
+    )
     .map((dirent) => dirent.name);
 
 const lastCodeFinder = (name, splitter = '-') => {
@@ -78,64 +27,123 @@ const lastCodeFinder = (name, splitter = '-') => {
 
 const currentGithubRepoDir = lastCodeFinder(__dirname, '/');
 
-console.log(currentGithubRepoDir, 'current');
+// if it exists then write it to blank first.
+writeFileSync(`seed-${currentGithubRepoDir}.js`, '');
+writeFileSync(
+  `seed.js`,
+  `var Topic = require('../../models/topic'); \nvar Exercise = require('../../models/exercise'); \nvar Block = require('../../models/block');\n\nvar seeder = async () => {\n try {\n console.log('start running'); \n`
+);
 
 const exerciseFolders = getDirectories('./');
 
-var exerciseConfigURLs = [];
+var topicConfig = readFileSync('topicConfig.json');
+
+var topic = {
+  ...JSON.parse(topicConfig),
+};
+
+if (topic.githubAssignmentRepo) {
+  topic.githubRepo =
+    'AltCampus/' + topic.githubAssignmentRepo.split('/').reverse()[0];
+}
+topic.slug = (
+  topic['name'].split(' ').join('-') +
+  '-' +
+  lastCodeFinder(currentGithubRepoDir, '-')
+).toLowerCase();
+topic.isPublished = true;
+delete topic.exercises;
+
+var topicStr = `var topic = await Topic.create(${JSON.stringify(topic)}); \n\n`;
+
+appendFileSync('./seed.js', topicStr);
+
+var exercises = [];
 
 for (var exerciseKey in exerciseFolders) {
-  const exerciseName = exerciseFolders[exerciseKey];
-  const blockFolders = getDirectories(exerciseName);
-  var exerciseUniqueCode = lastCodeFinder(exerciseName);
+  var exerciseName = exerciseFolders[exerciseKey];
+  var exerciseConfig = readFileSync(`${exerciseName}/exerciseConfig.json`);
+  var exercise = {
+    ...JSON.parse(exerciseConfig),
+  };
+  exercise.displayName = exercise.name;
+  exercise.topicId = 'topic._id';
+  exercise.slug =
+    exerciseName.toLowerCase() + '-' + lastCodeFinder(exerciseName);
+  exercise.isPublished = true;
+  exercise.displayName = exercise.name;
+  delete exercise.blocks;
+  var exerciseStr = `var exercise${exerciseKey} = await Exercise.create(${JSON.stringify(
+    exercise
+  )}); \n`;
+  appendFileSync('./seed.js', exerciseStr);
+  exercises.push(`exercise${exerciseKey}._id`);
 
-  var blockConfigURLs = [];
+  const blockFolders = getDirectories(exerciseName);
+
+  var blocks = [];
 
   for (var blockKey in blockFolders) {
-    var blockConfig = { ...globalBlockConfig };
-    const blockName = blockFolders[blockKey];
-
-    var blockUniqueCode = lastCodeFinder(blockName);
-    blockConfig.uniqueCode = blockUniqueCode;
-
-    var fileContent = readFileSync(`${exerciseName}/${blockName}/index.md`);
-
-    if (fileContent.includes('writeCode')) {
-      blockConfig.type = 'writeCode';
-      blockConfig.githubBranchName = `block-${blockUniqueCode}`;
-      blockConfig.openFile = `./block-${blockUniqueCode}`;
-      blockConfig.contentType = 'csb';
-    }
-
-    blockConfig.descriptionURL = `https://github.com/AltCampus/${currentGithubRepoDir}/tree/master/${exerciseName}/${blockName}/index.md`;
-
-    // put this blockConfig.json in the block
-    console.log(blockName, 'start');
-    appendFileSync(
-      `${exerciseName}/${blockName}/blockConfig.json`,
-      JSON.stringify(blockConfig)
+    var blockConfig = readFileSync(
+      `${exerciseName}/${blockFolders[blockKey]}/blockConfig.json`
     );
-    blockConfigURLs.push(
-      `https://github.com/AltCampus/${currentGithubRepoDir}/tree/master/${exerciseName}/${blockName}/blockConfig.json`
+    var block = {
+      ...JSON.parse(blockConfig),
+    };
+    block.exerciseId = `exercise${exerciseKey}._id`;
+    block.topicId = 'topic._id';
+    block.slug =
+      blockFolders[blockKey].toLowerCase() +
+      '-' +
+      lastCodeFinder(blockFolders[blockKey]);
+    block.isPublished = true;
+    block.displayName = block.displayName || block.name;
+    block.description = readFileSync(
+      `${exerciseName}/${blockFolders[blockKey]}/index.md`,
+      'utf-8'
     );
-    console.log(blockName, 'done');
+    var blockStr = `var block${exerciseKey}${blockKey} = await Block.create(${JSON.stringify(
+      block
+    )}); \n`;
+    appendFileSync('./seed.js', blockStr);
+    blocks.push(`block${exerciseKey}${blockKey}._id`);
   }
 
-  var exerciseConfig = { ...globalExerciseConfig };
-  exerciseConfig.blocks = blockConfigURLs;
-  exerciseConfig.uniqueCode = exerciseUniqueCode;
-  exerciseConfig.githubBranchName =
-    exerciseName.split('-')[0].toLowerCase() + '-' + exerciseUniqueCode;
-  exerciseConfig.type = 'content';
-  exerciseConfigURLs.push(
-    `https://github.com/AltCampus/${currentGithubRepoDir}/tree/master/${exerciseName}/exerciseConfig.json`
-  );
-  appendFileSync(
-    `${exerciseName}/exerciseConfig.json`,
-    JSON.stringify(exerciseConfig)
-  );
+  var exerciseUpdateStr = `exercise${exerciseKey}.blocks=${JSON.stringify(
+    blocks
+  )}; \nexercise${exerciseKey}.save(); \n\n\n`;
+  appendFileSync('./seed.js', exerciseUpdateStr);
+
+  var seedFileContent = readFileSync('./seed.js', 'utf-8');
+
+  blocks.forEach((b, i) => {
+    var stringToReplace = `"block${exerciseKey}${i}._id"`;
+    const replacer = new RegExp(stringToReplace, 'g');
+    seedFileContent = seedFileContent.replace(
+      replacer,
+      `block${exerciseKey}${i}._id`
+    );
+  });
+
+  writeFileSync('./seed.js', seedFileContent);
 }
 
-topicConfig.uniqueCode = lastCodeFinder(currentGithubRepoDir);
-topicConfig.exercises = exerciseConfigURLs;
-appendFileSync(`topicConfig.json`, JSON.stringify(topicConfig));
+var topicUpdateStr = `topic.exercises=${JSON.stringify(
+  exercises
+)}; \ntopic.save(); \n\n console.log('stop running');\n\n} catch(err) { \n console.log('err', err); \n} \n\n\n`;
+appendFileSync('./seed.js', topicUpdateStr);
+
+var seedFileContent = readFileSync('./seed.js', 'utf-8');
+seedFileContent = seedFileContent.replace(/"topic._id"/g, `topic._id`);
+
+exercises.forEach((e, i) => {
+  var stringToReplace = `"exercise${i}._id"`;
+  const replacer = new RegExp(stringToReplace, 'g');
+  seedFileContent = seedFileContent.replace(replacer, `exercise${i}._id`);
+});
+
+writeFileSync('./seed.js', seedFileContent);
+
+appendFileSync('./seed.js', `}\n\nmodule.exports = seeder;`);
+
+renameSync('seed.js', `seed-${currentGithubRepoDir}.js`);
