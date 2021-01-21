@@ -6,7 +6,7 @@
   "type": "writeCode",
   "level": 1,
   "contentType": "csb",
-  "automatedFeedback": "",
+  "automatedFeedback": "https://youtu.be/SJtv_MPD96A",
   "githubBranchName": "block-BJaadf",
   "openFile": "./block-BJaadf",
   "isTestable": false,
@@ -20,7 +20,12 @@
     "isAssignmentDone": true,
     "shouldSplitBlock": false,
     "actionsRequired": [
-      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+      {
+        "videoId": "",
+        "scrimbaId": "",
+        "type": "toVideo",
+        "topic": ""
+      }
     ]
   }
 }

@@ -6,7 +6,7 @@
   "type": "writeTextAnswer",
   "level": 1,
   "contentType": "",
-  "automatedFeedback": "",
+  "automatedFeedback": "https://youtu.be/lDBGRaQCjm8",
   "githubBranchName": "",
   "openFile": "",
   "isTestable": false,
@@ -20,7 +20,12 @@
     "isAssignmentDone": true,
     "shouldSplitBlock": false,
     "actionsRequired": [
-      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+      {
+        "videoId": "",
+        "scrimbaId": "",
+        "type": "toVideo",
+        "topic": ""
+      }
     ]
   }
 }

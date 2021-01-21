@@ -10,7 +10,7 @@
   "githubBranchName": "block-BJaadr",
   "openFile": "./block-BJaadr",
   "isTestable": false,
-  "estimatedTimeToComplete": 0,
+  "estimatedTimeToComplete": 7,
   "isPotentialInterviewQuestion": false,
   "quizOptions": { "a": "", "b": "", "c": "", "d": "" },
   "quizCorrectAnswerOptions": [],
@@ -20,7 +20,12 @@
     "isAssignmentDone": true,
     "shouldSplitBlock": false,
     "actionsRequired": [
-      { "videoId": "", "scrimbaId": "", "type": "toVideo", "topic": "" }
+      {
+        "videoId": "",
+        "scrimbaId": "",
+        "type": "toVideo",
+        "topic": ""
+      }
     ]
   }
 }
